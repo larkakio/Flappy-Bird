@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --neon-cyan: #00f5ff;
+  --neon-magenta: #ff2bd6;
+  --neon-lime: #b8ff00;
+  --void: #050508;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--void);
+  color: #e8e8f0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.neon-btn {
+  border: 1px solid rgba(0, 245, 255, 0.45);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 245, 255, 0.15),
+    rgba(255, 43, 214, 0.12)
+  );
+  color: #b8f8ff;
+  box-shadow:
+    0 0 20px rgba(0, 245, 255, 0.25),
+    inset 0 0 12px rgba(255, 43, 214, 0.08);
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+
+.neon-btn:hover:not(:disabled) {
+  border-color: rgba(255, 43, 214, 0.6);
+  box-shadow:
+    0 0 28px rgba(255, 43, 214, 0.35),
+    0 0 12px rgba(0, 245, 255, 0.2);
+}
+
+.neon-btn:disabled {
+  cursor: not-allowed;
+}
+
+@keyframes neon-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}

@@ -20,14 +20,16 @@ cd web && npm install && npm run dev
 cd contracts && forge test
 ```
 
-Copy `.env.example` to `web/.env.local` and fill in values after [base.dev](https://base.dev) registration.
+Copy `.env.example` to `web/.env.local` and adjust if needed.
+
+**Production:** https://flappy-bird-sigma-three.vercel.app
 
 ## Base.dev setup
 
-1. Create a project at [base.dev](https://base.dev).
-2. Set **App ID** → `NEXT_PUBLIC_BASE_APP_ID` (also emitted as `<meta name="base:app_id" />` in layout).
+1. App on [base.dev](https://base.dev) / [dashboard.base.org](https://dashboard.base.org).
+2. **App ID** `6a0aaea01f1ccae4c221e8d0` → `NEXT_PUBLIC_BASE_APP_ID` (also `<meta name="base:app_id" />` in layout).
 3. Copy **Builder Code** (`bc_…`) → `NEXT_PUBLIC_BUILDER_CODE`.
-4. `CheckIn.sol` on Base mainnet: `0x9f133Cf344f8FC078882d3ce9B7C425Ae2695BB8` (set in `web/.env.local` as `NEXT_PUBLIC_CHECK_IN_CONTRACT_ADDRESS`).
+4. `CheckIn.sol` on Base mainnet: `0x9f133Cf344f8FC078882d3ce9B7C425Ae2695BB8`.
 
 ## Deploy contract
 
@@ -39,7 +41,8 @@ forge script script/DeployCheckIn.s.sol:DeployCheckIn --rpc-url $BASE_RPC_URL --
 ## Vercel
 
 - Root Directory: `web`
-- Add all `NEXT_PUBLIC_*` env vars from `.env.example`.
+- Production URL: `https://flappy-bird-sigma-three.vercel.app`
+- Add all `NEXT_PUBLIC_*` env vars from `.env.example` (especially `NEXT_PUBLIC_BASE_APP_ID` and `NEXT_PUBLIC_SITE_URL`).
 
 ## Game controls
 

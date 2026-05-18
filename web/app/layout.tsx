@@ -13,12 +13,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const PRODUCTION_SITE_URL = "https://flappy-bird-sigma-three.vercel.app";
+const PRODUCTION_BASE_APP_ID = "6a0aaea01f1ccae4c221e8d0";
+
 const baseAppId =
-  process.env.NEXT_PUBLIC_BASE_APP_ID?.trim() || "placeholder";
+  process.env.NEXT_PUBLIC_BASE_APP_ID?.trim() || PRODUCTION_BASE_APP_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    process.env.NEXT_PUBLIC_SITE_URL ?? PRODUCTION_SITE_URL,
   ),
   title: "Neon Flappy — Cyber Run",
   description:

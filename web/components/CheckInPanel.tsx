@@ -54,13 +54,12 @@ export function CheckInPanel() {
         await switchChainAsync({ chainId: baseId });
       }
 
-      const dataSuffix = getBuilderDataSuffix();
       await writeContractAsync({
         address: CONTRACT,
         abi: checkInAbi,
         functionName: "checkIn",
         chainId: baseId,
-        ...(dataSuffix ? { dataSuffix } : {}),
+        dataSuffix: getBuilderDataSuffix(),
       });
 
       setMessage("Daily sync complete");

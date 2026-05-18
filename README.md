@@ -28,7 +28,7 @@ Copy `.env.example` to `web/.env.local` and adjust if needed.
 
 1. App on [base.dev](https://base.dev) / [dashboard.base.org](https://dashboard.base.org).
 2. **App ID** `6a0aaea01f1ccae4c221e8d0` → `NEXT_PUBLIC_BASE_APP_ID` (also `<meta name="base:app_id" />` in layout).
-3. Copy **Builder Code** (`bc_…`) → `NEXT_PUBLIC_BUILDER_CODE`.
+3. **Builder Code** `bc_ghc4y6ow` → `NEXT_PUBLIC_BUILDER_CODE` (wagmi `dataSuffix` via `ox` / ERC-8021).
 4. `CheckIn.sol` on Base mainnet: `0x9f133Cf344f8FC078882d3ce9B7C425Ae2695BB8`.
 
 ## Deploy contract
